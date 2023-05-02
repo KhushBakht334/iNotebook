@@ -27,9 +27,6 @@ const NoteState =({children})=>{
       //API Call
       const response = await fetch(`${host}/api/notes/addnote`, {
         method: "POST", 
-        // mode: "cors", 
-        // cache: "no-cache",
-        // credentials: "same-origin", 
         headers: {
           "Content-Type": "application/json",
           "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ0ZDJiN2E3ZjMyZjRkNDI3MDk3NTE1In0sImlhdCI6MTY4Mjc4MTkzNn0.vAEzm3AtovE5KJl18CyIG1i7W0CmzTHjOCZ0VwbO0Ts"
