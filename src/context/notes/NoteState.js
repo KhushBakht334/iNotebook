@@ -36,17 +36,7 @@ const NoteState =({children})=>{
         },
         body: JSON.stringify({title, description, tag}),
       });
-
-      //Logic to Add Note
-    const note=  {
-        "_id": "644e11f0bea92cd7bb36ed8d",
-        "user": "644d2b7a7f32f4d427097515",
-        "title": title,
-        "description": description,
-        "tag": tag,
-        "date": "2023-04-30T07:00:00.695Z",
-        "__v": 0
-      };
+      const note= await response.json();
       setNotes(notes.concat(note))
     }
     //Delete A Note
