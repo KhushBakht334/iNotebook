@@ -10,12 +10,9 @@ const NoteState =({children})=>{
       //API Call
       const response = await fetch(`${host}/api/notes/fetchallnotes`, {
         method: "GET", 
-        // mode: "cors", 
-        // cache: "no-cache",
-        // credentials: "same-origin", 
         headers: {
           "Content-Type": "application/json",
-          "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ0ZDJiN2E3ZjMyZjRkNDI3MDk3NTE1In0sImlhdCI6MTY4Mjc4MTkzNn0.vAEzm3AtovE5KJl18CyIG1i7W0CmzTHjOCZ0VwbO0Ts"
+          "auth-token": localStorage.getItem(`token`)
         },
       });
       const json = await response.json()
@@ -29,7 +26,7 @@ const NoteState =({children})=>{
         method: "POST", 
         headers: {
           "Content-Type": "application/json",
-          "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ0ZDJiN2E3ZjMyZjRkNDI3MDk3NTE1In0sImlhdCI6MTY4Mjc4MTkzNn0.vAEzm3AtovE5KJl18CyIG1i7W0CmzTHjOCZ0VwbO0Ts"
+          "auth-token": localStorage.getItem(`token`)
         },
         body: JSON.stringify({title, description, tag}),
       });
@@ -41,12 +38,9 @@ const NoteState =({children})=>{
       //API call
       const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
         method: "DELETE", 
-        // mode: "cors", 
-        // cache: "no-cache",
-        // credentials: "same-origin", 
         headers: {
           "Content-Type": "application/json",
-          "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ0ZDJiN2E3ZjMyZjRkNDI3MDk3NTE1In0sImlhdCI6MTY4Mjc4MTkzNn0.vAEzm3AtovE5KJl18CyIG1i7W0CmzTHjOCZ0VwbO0Ts"
+          "auth-token": localStorage.getItem(`token`)
         },
       });
       const json= response.json(); 
@@ -59,13 +53,10 @@ const NoteState =({children})=>{
     const editNote=async (id, title, description, tag)=>{
       //API Call
       const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
-        method: "PUT", 
-        // mode: "cors", 
-        // cache: "no-cache",
-        // credentials: "same-origin", 
+        method: "PUT",  
         headers: {
           "Content-Type": "application/json",
-          "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ0ZDJiN2E3ZjMyZjRkNDI3MDk3NTE1In0sImlhdCI6MTY4Mjc4MTkzNn0.vAEzm3AtovE5KJl18CyIG1i7W0CmzTHjOCZ0VwbO0Ts"
+          "auth-token": localStorage.getItem(`token`)
         },
         body: JSON.stringify({title, description, tag}),
       });

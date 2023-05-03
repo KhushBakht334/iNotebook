@@ -18,8 +18,9 @@ const Login = ({showAlert}) => {
           if(json.success){
             //save the auth token and redirect
             localStorage.setItem('token', json.authtoken);
+            showAlert("successfully Login", "success")
             navigate("/");
-           showAlert("successfully Login", "success")
+           
           }else{
           showAlert("Invalid", "danger")
           }
